@@ -11,7 +11,7 @@ class StudentInfo {
 		int third;
 		int fourth;
 		int Avergrade;
-	
+
 	public:
 		StudentInfo(char * n, char * i, int a, int one, int two, int three, int four);
 		char* getName() {
@@ -29,7 +29,7 @@ class StudentInfo {
 };
 
 StudentInfo::StudentInfo(char * n, char * i, int a, int one, int two, int three, int four) {
-	name = n; i = ID; age = a; first = one; second = two;
+	name = n; ID = i; age = a; first = one; second = two;
 	third = three; fourth = four;
 	Avergrade = (one + two + three + four) / 4;
 }
@@ -41,20 +41,20 @@ int main() {
 	int first;
 	int second;
 	int third;
-	int fourth;	
+	int fourth;
 	char c;
-	
+
 	name = new char[20];
 	ID = new char[20];
-	
-	cin.getline(name, 15, ',');
-	cin >> age >> c;
-	cin.getline(ID, 10, ',');
-	cin >> first >> c >> second >> c >> third >> c >> fourth;
-	
-	StudentInfo student = new StudentInfo(name, ID, age, first, second, third, fourth);
-	
-	cout << student.getName() << ',' << student.getAge() << ',' << student.getID() << ',' << student.getAverg();
-	
+
+	std::cin.getline(name, 15, ',');
+	std::cin >> age >> c;
+	std::cin.getline(ID, 10, ',');
+	std::cin >> first >> c >> second >> c >> third >> c >> fourth;
+
+	StudentInfo student = StudentInfo(name, ID, age, first, second, third, fourth);
+
+	std::cout << student.getName() << ',' << student.getAge() << ',' << student.getID() << ',' << student.getAverg();
+
 	return 0;
 }
